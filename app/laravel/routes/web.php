@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\TenantController as AdminTenantController;
 use App\Http\Controllers\Admin\WhatsappController as AdminWhatsappController;
 use App\Http\Controllers\LeadController;
+use App\Http\Controllers\InboxController;
+use App\Http\Controllers\MessageSendController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,6 +38,10 @@ Route::middleware('auth')->group(function () {
         // Leads Kanban (any authenticated within tenant)
         Route::get('/leads/kanban', [LeadController::class, 'kanban'])->name('leads.kanban');
         Route::post('/leads/move', [LeadController::class, 'move'])->name('leads.move');
+
+        // Inbox
+        Route::get('/inbox', [InboxController::class, 'index'])->name('inbox.index');
+        Route::post('/conversations/{conversation}/reply', [MessageSendController::class, 'reply'])->name('conversations.reply');
     });
 });
 
