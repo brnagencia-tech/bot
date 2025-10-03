@@ -25,7 +25,7 @@ class WhatsappWebhookController extends Controller
         return response('Forbidden', 403);
     }
 
-    public function receive(Request $request)
+    public function receive(Request $request, \App\Services\AiOrchestrator $ai, \App\Services\WhatsappClient $wa)
     {
         $payload = $request->all();
         Log::info('WA webhook', $payload);
@@ -63,7 +63,7 @@ class WhatsappWebhookController extends Controller
                 ['channel' => 'whatsapp']
             );
 
-            Message::firstOrCreate(
+            $in = Message::firstOrCreate(
                 ['conversation_id' => $conversation->id, 'wa_message_id' => $waMessageId],
                 [
                     'direction' => 'in',
@@ -72,6 +72,31 @@ class WhatsappWebhookController extends Controller
                     'status' => 'received',
                 ]
             );
+
+            // Auto-reply using AI if enabled
+            try {
+                if (config('ai.autoreply')) {
+                    // Choose role based on hour (basic rule)
+                    $hour = now()->timezone('America/Sao_Paulo')->hour;
+                    $preferred = ($hour >= 0 && $hour < 8) ? 'SUPORTE' : 'SDR';
+                    $result = $ai->route($conversation, $preferred);
+                    $outText = $result['message'] ?? null;
+                    if ($outText) {
+                        $resp = $wa->sendText($account, $from, $outText);
+                        $outWaId = $resp['messages'][0]['id'] ?? null;
+                        Message::create([
+                            'conversation_id' => $conversation->id,
+                            'direction' => 'out',
+                            'body' => $outText,
+                            'wa_message_id' => $outWaId,
+                            'status' => 'sent',
+                            'sent_at' => now(),
+                        ]);
+                    }
+                }
+            } catch (\Throwable $e) {
+                Log::error('AI autoreply error', ['error' => $e->getMessage()]);
+            }
         }
 
         return response()->json(['ok' => true]);

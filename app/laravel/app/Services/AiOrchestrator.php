@@ -4,25 +4,45 @@ namespace App\Services;
 
 use App\Models\Agent;
 use App\Models\Conversation;
+use App\Services\Ai\OpenAIClient;
 
 class AiOrchestrator
 {
     public function route(Conversation $conversation, string $preferredRole = null): array
     {
-        // Placeholder for Python/FastAPI integration.
-        // Return a dummy response format: ['message' => '...', 'actions' => [...]]
         $role = $preferredRole ?? 'SDR';
         $agent = Agent::where('tenant_id', $conversation->tenant_id)->where('role', $role)->first();
 
-        $text = 'Olá! Sou seu agente virtual. Em breve responderei de forma inteligente.';
-        if ($agent && $agent->role === 'SUPORTE') {
-            $text = 'Obrigado pela mensagem! Estamos fora do expediente, registramos sua solicitação.';
+        $apiKey = config('services.openai.api_key');
+
+        // If OpenAI not configured, fallback to a simple canned reply
+        if (!$apiKey) {
+            $text = $agent && $agent->role === 'SUPORTE'
+                ? 'Obrigado pela mensagem! Estamos fora do expediente, registramos sua solicitação.'
+                : 'Olá! Obrigado por nos chamar. Em breve retornaremos.';
+
+            return ['message' => $text, 'actions' => []];
         }
 
+        // Build conversation into ChatML
+        $messages = [];
+        $system = $agent?->prompt ?: 'Você é um agente de atendimento. Responda de forma útil e breve.';
+        $messages[] = ['role' => 'system', 'content' => $system];
+
+        $history = $conversation->messages()->orderByDesc('id')->limit(15)->get()->reverse();
+        foreach ($history as $m) {
+            $messages[] = [
+                'role' => $m->direction === 'out' ? 'assistant' : 'user',
+                'content' => $m->body ?? '',
+            ];
+        }
+
+        $client = app(OpenAIClient::class);
+        $reply = $client->chat($messages, config('services.openai.model'), (float)($agent->temperature ?? 0.3));
+
         return [
-            'message' => $text,
+            'message' => trim($reply) ?: 'Certo, obrigado! Em breve retorno com mais detalhes.',
             'actions' => [],
         ];
     }
 }
-

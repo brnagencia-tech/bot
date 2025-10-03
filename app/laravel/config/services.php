@@ -38,4 +38,10 @@ return [
     'whatsapp' => [
         'verify_token' => env('WHATSAPP_VERIFY_TOKEN', null),
     ],
+
+    'openai' => [
+        'api_key' => env('OPENAI_API_KEY'),
+        'base_url' => env('OPENAI_BASE', 'https://api.openai.com/v1'),
+        'model' => env('OPENAI_MODEL', 'gpt-4o-mini'),
+    ],
 ];
