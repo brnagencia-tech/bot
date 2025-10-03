@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Do Zero ao Influenciador - E-book por R$27</title>
+  <meta name="description" content="Transforme seu Instagram em uma máquina de vendas com o eBook Do Zero ao Influenciador. Método aplicado por mais de 600 cases reais, por apenas R$27." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <style>
+    :root {
+      --bg-primary:#f2f6fc;
+      --bg-secondary:#ffffff;
+      --text-primary:#071735;
+      --text-secondary:#2e3c58;
+      --accent:#00c27d;
+      --accent-dark:#008c5c;
+      --accent-light:rgba(0,194,125,.12);
+      --muted:#6c7a99;
+      --white:#fff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Inter',sans-serif;
+      background:var(--bg-primary);
+      color:var(--text-primary);
+      line-height:1.6;
+    }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; border-radius:16px; }
+
+    .section { padding:72px 24px; }
+    .section.blue { background:var(--bg-secondary); }
+    .section.light { background:var(--bg-primary); }
+
+    .container {
+      max-width:1080px;
+      margin:0 auto;
+      display:grid;
+      gap:36px;
+    }
+
+    .headline {
+      font-size:2.6rem;
+      font-weight:900;
+      letter-spacing:-.02em;
+      color:var(--text-primary);
+    }
+    .subheadline {
+      font-size:1.15rem;
+      color:var(--text-secondary);
+      max-width:720px;
+    }
+
+    .cta-button {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px 32px;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      background:linear-gradient(135deg,var(--accent-dark),var(--accent));
+      color:var(--white);
+      transition:transform .25s ease, box-shadow .25s ease;
+      box-shadow:0 16px 40px rgba(0,194,125,.22);
+    }
+    .cta-button:hover { transform:translateY(-2px); box-shadow:0 22px 50px rgba(0,194,125,.28); }
+    .cta-button:focus-visible { outline:3px solid rgba(0,194,125,.4); outline-offset:4px; }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 18px;
+      border-radius:999px;
+      background:var(--accent-light);
+      color:var(--accent);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .grid-two {
+      display:grid;
+      gap:28px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      align-items:start;
+    }
+    .card {
+      background:var(--bg-secondary);
+      border-radius:18px;
+      border:1px solid rgba(0,194,125,.15);
+      padding:28px;
+      box-shadow:0 18px 45px rgba(10,24,48,.08);
+    }
+    .card h3 { font-size:1.35rem; margin-bottom:12px; color:var(--accent-dark); }
+
+    ul.list {
+      list-style:none;
+      display:grid;
+      gap:12px;
+      color:var(--text-secondary);
+      font-size:1.05rem;
+    }
+    ul.list li {
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    ul.list i {
+      margin-top:4px;
+      color:var(--accent);
+      font-size:1rem;
+    }
+
+    .hero-copy { display:grid; gap:24px; }
+
+    .hero-grid {
+      display:grid;
+      gap:36px;
+      align-items:center;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    }
+
+    .hero-media {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hero-media img {
+      width:min(100%,420px);
+      border-radius:28px;
+      box-shadow:0 32px 70px rgba(7,23,53,.22);
+    }
+
+    .hero-headline {
+      display:grid;
+      gap:12px;
+      font-size:3.1rem;
+      line-height:1.08;
+      max-width:780px;
+    }
+    .hero-headline__eyebrow {
+      font-size:1rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      color:var(--accent-dark);
+    }
+    .hero-headline__main {
+      display:inline;
+      font-weight:900;
+      background:linear-gradient(135deg,var(--accent-dark),var(--accent));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .stats-bar {
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:flex-start;
+    }
+    .stat {
+      flex:1 1 240px;
+      background:var(--bg-secondary);
+      border-radius:16px;
+      padding:22px 24px;
+      border:1px solid rgba(0,194,125,.12);
+      box-shadow:0 14px 36px rgba(8,22,48,.08);
+    }
+    .stat strong { font-size:1.8rem; color:var(--accent-dark); display:block; }
+    .stat span { color:var(--muted); font-weight:600; }
+
+    .proof-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;
+      margin-top:18px;
+    }
+    .proof-card {
+      background:var(--bg-secondary);
+      border-radius:16px;
+      border:1px solid rgba(0,194,125,.12);
+      padding:18px;
+      box-shadow:0 12px 30px rgba(7,23,53,.08);
+      display:grid;
+      gap:14px;
+    }
+    .proof-info {
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      color:var(--text-secondary);
+      font-size:.95rem;
+    }
+    .proof-info strong { color:var(--accent-dark); }
+
+    .section.videos { background:var(--bg-secondary); }
+    .videos .container { gap:28px; }
+
+    .video-grid {
+      display:grid;
+      gap:32px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+
+    .video-card {
+      position:relative;
+      display:grid;
+      gap:18px;
+      padding:22px 20px 24px;
+      border-radius:22px;
+      background:var(--bg-secondary);
+      border:1px solid rgba(0,194,125,.14);
+      box-shadow:0 20px 46px rgba(7,23,53,.14);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .video-card::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      border-top:4px solid rgba(0,194,125,.45);
+      pointer-events:none;
+    }
+    .video-card:hover {
+      transform:translateY(-4px);
+      box-shadow:0 28px 58px rgba(7,23,53,.18);
+    }
+
+    .video-card__title {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      color:var(--text-primary);
+      letter-spacing:.01em;
+    }
+    .video-card__title i {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+      border-radius:16px;
+      background:linear-gradient(135deg,rgba(0,194,125,.18),rgba(0,194,125,.05));
+      color:var(--accent);
+      font-size:1.15rem;
+      box-shadow:0 14px 24px rgba(0,194,125,.18);
+    }
+
+    .video-card__title-text {
+      display:grid;
+      gap:2px;
+      line-height:1.2;
+    }
+    .video-card__title-text strong {
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      color:var(--muted);
+    }
+    .video-card__title-text em {
+      font-style:normal;
+      font-size:1.12rem;
+      color:var(--text-primary);
+    }
+
+    .video-card__subtitle {
+      color:var(--text-secondary);
+      font-size:.98rem;
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .video-frame {
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      background:transparent;
+      border:1px solid rgba(0,194,125,.18);
+      box-shadow:0 26px 60px rgba(7,23,53,.14);
+    }
+    .video-frame.vertical { aspect-ratio:9/16; }
+    .video-frame iframe,
+    .video-frame vturb-smartplayer {
+      display:block;
+      width:100%;
+      height:100%;
+      border:0;
+      border-radius:inherit;
+    }
+    .video-frame vturb-smartplayer { overflow:hidden; }
+
+    .highlight-cta .container {
+      gap:0;
+    }
+
+    .highlight-cta__card {
+      margin:0 auto;
+      max-width:720px;
+      background:var(--bg-secondary);
+      border-radius:26px;
+      border:1px solid rgba(0,194,125,.14);
+      padding:48px 42px;
+      display:grid;
+      gap:22px;
+      text-align:center;
+      box-shadow:0 26px 64px rgba(7,23,53,.12);
+    }
+
+    .highlight-cta__list {
+      list-style:none;
+      display:grid;
+      gap:12px;
+      color:var(--text-secondary);
+      font-size:1.02rem;
+    }
+
+    .highlight-cta__list li::before {
+      content:"•";
+      color:var(--accent);
+      font-weight:900;
+      margin-right:10px;
+    }
+
+    .highlight-cta__note {
+      color:var(--accent-dark);
+      font-weight:700;
+    }
+
+    .highlight-cta__guarantee {
+      background:linear-gradient(135deg,rgba(0,194,125,.08),rgba(0,194,125,.02));
+      border:1px solid rgba(0,194,125,.18);
+      border-radius:20px;
+      padding:22px;
+      display:grid;
+      gap:10px;
+      color:var(--text-secondary);
+    }
+    .reasons {
+      display:grid;
+      gap:16px;
+      font-size:1.05rem;
+      color:var(--text-secondary);
+    }
+    .reasons span { font-weight:700; color:var(--accent-dark); }
+
+    .guarantee {
+      background:linear-gradient(135deg,rgba(0,194,125,.10),rgba(0,194,125,.04));
+      border:1px solid rgba(0,194,125,.2);
+      padding:24px;
+      border-radius:18px;
+      display:grid;
+      gap:10px;
+      color:var(--text-secondary);
+    }
+
+    .cta-final {
+      text-align:center;
+      display:grid;
+      gap:16px;
+      justify-items:center;
+    }
+    .cta-final p { max-width:560px; color:var(--text-secondary); font-size:1.05rem; }
+
+    footer {
+      background:var(--bg-secondary);
+      color:var(--muted);
+      text-align:center;
+      padding:28px;
+      font-size:.92rem;
+    }
+
+    @media (max-width:720px) {
+      .headline { font-size:2rem; line-height:1.2; }
+      .section { padding:56px 20px; }
+      .stats-bar { gap:16px; }
+      .cta-button {
+        width:100%;
+        font-size:1.05rem;
+        padding:18px 24px;
+        letter-spacing:.12em;
+        box-shadow:0 18px 44px rgba(0,194,125,.24);
+      }
+      .hero-grid { text-align:center; }
+      .hero-copy { justify-items:center; gap:20px; }
+      .hero-copy .stats-bar { justify-content:center; }
+      .hero-media img { width:78%; }
+      .hero-headline { font-size:2.38rem; gap:10px; }
+      .hero-headline__eyebrow { font-size:.82rem; letter-spacing:.16em; }
+      .hero-headline__main { line-height:1.12; }
+      .subheadline { font-size:1.05rem; }
+      .card h3 { text-align:center; }
+      .section.blue .headline { text-align:center; }
+      .video-grid { gap:20px; }
+      .video-card { padding:18px; }
+      .video-card__title { align-items:flex-start; }
+      .video-card__title i { width:38px; height:38px; font-size:1rem; }
+      .video-card__title-text { text-align:left; }
+      .video-card__title-text em { font-size:1.05rem; }
+      .highlight-cta__card { padding:36px 26px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dobra 1: Headline + CTA -->
+  <section class="section light" id="topo">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="badge"><i class="fa-solid fa-bolt"></i> Oferta limitada • eBook + 5 bônus</span>
+          <h1 class="headline hero-headline">
+            <span class="hero-headline__eyebrow">Transforme sua autoridade em vendas</span>
+            <span class="hero-headline__main">Vire influenciador sem gastar uma fortuna</span>
+          </h1>
+          <p class="subheadline">Receba o plano validado por mais de 600 cases e construa uma audiência lucrativa em 7 dias, começando com apenas R$27.</p>
+          <a class="cta-button" href="#oferta">🔥 Quero começar agora por R$27 🔥</a>
+          <div class="stats-bar">
+            <div class="stat"><strong>600+</strong><span>Influenciadores treinados</span></div>
+            <div class="stat"><strong>R$ 30M</strong><span>Faturados pelos nossos clientes</span></div>
+            <div class="stat"><strong>7 dias</strong><span>Para implementar o plano inicial</span></div>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://brnsistemas.me/img.webp" alt="Capa do eBook Do Zero ao Influenciador" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dobra 2: Dor e consequências -->
+  <section class="section blue" id="dor">
+    <div class="container">
+      <h2 class="headline" style="font-size:2rem;">Reconhece esses sinais?</h2>
+      <div class="grid-two">
+        <div class="card">
+          <h3>Quantas vezes você já...</h3>
+          <ul class="list">
+            <li><i class="fa-solid fa-mobile-screen-button"></i>Postou conteúdo sem ter retorno algum?</li>
+            <li><i class="fa-solid fa-money-bill-wave"></i>Acreditou que precisava de milhares de reais para virar influenciador?</li>
+            <li><i class="fa-solid fa-hourglass-half"></i>Viu outros crescendo enquanto você fica parado?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>A cada dia que você espera...</h3>
+          <ul class="list">
+            <li><i class="fa-solid fa-users-slash"></i>Perde seguidores e relevância.</li>
+            <li><i class="fa-solid fa-briefcase"></i>Deixa oportunidades na mesa.</li>
+            <li><i class="fa-solid fa-circle-exclamation"></i>Continua fora do jogo.</li>
+          </ul>
+          <p style="margin-top:16px; color:var(--text-secondary);"><strong>O problema não é você</strong>, é o caminho errado que te ensinaram. O método certo elimina o improviso e dá previsibilidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dobra 3: Solução + Prova Social -->
+  <section class="section light" id="solucao">
+    <div class="container">
+      <h2 class="headline" style="font-size:2.15rem;">✅ O método que já ajudou mais de 600 influenciadores a sair do zero</h2>
+      <p class="subheadline">No eBook <strong>“Do Zero ao Influenciador de Sucesso”</strong>, você aprende o processo completo — do posicionamento à primeira ação online lucrativa — com provas reais de quem já aplicou.</p>
+      <div class="grid-two">
+        <div class="card">
+          <h3>Dentro do eBook você vai descobrir:</h3>
+          <ul class="list">
+            <li><i class="fa-solid fa-store"></i>Como organizar seu Instagram como uma vitrine de vendas.</li>
+            <li><i class="fa-solid fa-bullhorn"></i>Como criar conteúdo que atrai e vende (mesmo com poucos seguidores).</li>
+            <li><i class="fa-solid fa-rocket"></i>Como lançar sua primeira ação online com estrutura profissional.</li>
+            <li><i class="fa-solid fa-shield"></i>Como evitar os erros que travam a maioria.</li>
+            <li><i class="fa-solid fa-chart-line"></i>Como escalar com anúncios baratos e estratégicos.</li>
+          </ul>
+          <div class="guarantee" style="margin-top:18px;">
+            <strong>Prova Social:</strong>
+            <p>Influenciadores reais já faturaram de R$ 5 mil a R$ 1 milhão aplicando esse método. Agora é a sua vez.</p>
+          </div>
+        </div>
+        <div class="proof">
+          <div class="proof-grid">
+            <div class="proof-card">
+              <img src="https://brn.lat/correa.webp" alt="@soldado_correa_80" loading="lazy" />
+              <div class="proof-info">
+                <strong>@soldado_correa_80</strong>
+                <span>De soldado a R$ 300k/mês com ações guiadas BRN</span>
+              </div>
+            </div>
+            <div class="proof-card">
+              <img src="https://brn.lat/pig.webp" alt="@pigmeuof" loading="lazy" />
+              <div class="proof-info">
+                <strong>@pigmeuof</strong>
+                <span>Humorista que transformou audiência em R$ 500k/mês</span>
+              </div>
+            </div>
+            <div class="proof-card">
+              <img src="https://brn.lat/renato.webp" alt="@renatojunioriat" loading="lazy" />
+              <div class="proof-info">
+                <strong>@renatojunioriat</strong>
+                <span>Triplicou faturamento em 90 dias usando nossa estratégia</span>
+              </div>
+            </div>
+            <div class="proof-card">
+              <img src="https://brn.lat/lucas.webp" alt="@lucao_285" loading="lazy" />
+              <div class="proof-info">
+                <strong>@lucao_285</strong>
+                <span>Provou que não precisa de milhões de seguidores para vender alto</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dobra 4: Oferta -->
+  <section class="section blue" id="oferta">
+    <div class="container" style="gap:28px;">
+      <h2 class="headline" style="font-size:2.2rem; text-align:center;">🔥 Tudo isso por apenas R$27 (menos que uma pizza)</h2>
+      <div class="grid-two">
+        <div class="card">
+          <h3>Você recebe:</h3>
+          <ul class="list">
+            <li><i class="fa-solid fa-book"></i>O eBook completo “Do Zero ao Influenciador de Sucesso”.</li>
+            <li><i class="fa-solid fa-square-check"></i>+5 bônus exclusivos (checklist, ideias de conteúdo, copies prontas, planilha e roteiro de stories).</li>
+            <li><i class="fa-solid fa-bolt"></i>Acesso imediato e suporte via WhatsApp para dúvidas rápidas.</li>
+            <li><i class="fa-solid fa-hourglass-start"></i>Implementação rápida: comece sua primeira ação em 7 dias.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Garantia 7 dias • Risco zero</h3>
+          <p class="reasons">
+            <span>🚨 Oferta por tempo limitado:</span> esse valor simbólico pode aumentar a qualquer momento.
+            <span>💙 Garantia incondicional:</span> se em até 7 dias você sentir que não valeu cada centavo, devolvemos seu dinheiro. Sem perguntas.
+          </p>
+          <div class="guarantee" style="margin-top:20px;">
+            <strong>Pagamento 100% seguro</strong>
+            <p>Checkout via Kiwify com criptografia, pix instantâneo, cartão e boleto. Bônus avaliados em R$ 497 incluídos sem custo adicional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cta-final">
+        <a class="cta-button" href="https://pay.kiwify.com.br/7homUIR" target="_blank" rel="noopener">👉 SIM! QUERO GARANTIR MEU EBOOK POR R$27 AGORA 👈</a>
+        <p>Transforme seu Instagram em uma máquina de vendas com um plano simples, acessível e testado em mais de 600 cases reais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos em vídeo adicionais -->
+  <section class="section videos" id="provas">
+    <div class="container">
+      <h2 class="headline" style="font-size:2rem; text-align:center;">Provas sociais em vídeo</h2>
+      <p class="subheadline" style="text-align:center; margin:0 auto;">
+        Resultados reais de quem aplicou o método. Assista aos clientes mostrando bastidores e entregas.
+      </p>
+      <div class="video-grid">
+        <div class="video-card">
+          <span class="video-card__title">
+            <i class="fa-solid fa-user-check"></i>
+            <span class="video-card__title-text">
+              <strong>Prova social</strong>
+              <em>@renatojunioriat</em>
+            </span>
+          </span>
+          <p class="video-card__subtitle">Veja como o Renato Júnior escalou de R$ 10k para R$ 250k+ mensais.</p>
+          <div class="video-frame vertical">
+            <iframe title="Prova social @renatojunioriat" src="https://scripts.converteai.net/8de0291b-4cb6-41cd-aa0c-6962c76fc703/players/68862004389063254c3b56fc/v4/embed.html?controls=true&playsinline=true&autoplay=false&muted=true" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="video-card">
+          <span class="video-card__title">
+            <i class="fa-solid fa-user-check"></i>
+            <span class="video-card__title-text">
+              <strong>Prova social</strong>
+              <em>@soldado_correa_80</em>
+            </span>
+          </span>
+          <p class="video-card__subtitle">De soldado a empreendedor milionário — faturando R$ 300k+ mensais.</p>
+          <div class="video-frame vertical">
+            <vturb-smartplayer id="vid-68c32d2302d156008fef5581" data-autoplay="false" data-muted="true" data-playsinline="true"></vturb-smartplayer>
+          </div>
+        </div>
+        <div class="video-card">
+          <span class="video-card__title">
+            <i class="fa-solid fa-user-check"></i>
+            <span class="video-card__title-text">
+              <strong>Prova social</strong>
+              <em>@lucao_285</em>
+            </span>
+          </span>
+          <p class="video-card__subtitle">Prova de que não precisa de milhões de seguidores para faturar R$ 150k+.</p>
+          <div class="video-frame vertical">
+            <iframe title="Prova social @lucao_285" src="https://scripts.converteai.net/8de0291b-4cb6-41cd-aa0c-6962c76fc703/players/68bb96fba7c8b660b3091911/v4/embed.html?controls=true&playsinline=true&autoplay=false&muted=true" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="video-card">
+          <span class="video-card__title">
+            <i class="fa-solid fa-user-check"></i>
+            <span class="video-card__title-text">
+              <strong>Prova social</strong>
+              <em>@pigmeuof</em>
+            </span>
+          </span>
+          <p class="video-card__subtitle">Transformando humor em faturamento milionário com lançamentos estratégicos.</p>
+          <div class="video-frame vertical">
+            <iframe title="Prova social @pigmeuof" src="https://scripts.converteai.net/8de0291b-4cb6-41cd-aa0c-6962c76fc703/players/68bb9e37575dfb94b011c4f4/v4/embed.html?controls=true&playsinline=true&autoplay=false&muted=true" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section highlight-cta" id="garantia">
+    <div class="container">
+      <div class="highlight-cta__card">
+        <h2 class="headline" style="font-size:2.2rem;">🔥 Tudo isso por apenas R$27 (menos que uma pizza).</h2>
+        <p>Hoje você tem a chance de mudar sua trajetória como influenciador sem gastar rios de dinheiro. Por apenas R$27, você recebe:</p>
+        <ul class="highlight-cta__list">
+          <li>O eBook completo “Do Zero ao Influenciador de Sucesso”.</li>
+          <li>+5 bônus exclusivos (checklist, ideias de conteúdo, copies prontas, planilha de metas, roteiro de stories).</li>
+        </ul>
+        <p class="highlight-cta__note">🚨 Oferta por tempo limitado: esse valor simbólico pode aumentar a qualquer momento.</p>
+        <div class="highlight-cta__guarantee">
+          <strong>Garantia 7 dias • Risco zero</strong>
+          <p>Se em até 7 dias você sentir que não valeu cada centavo, devolvemos seu dinheiro. Sem perguntas.</p>
+        </div>
+        <a class="cta-button" href="https://pay.kiwify.com.br/7homUIR" target="_blank" rel="noopener">👉 SIM! QUERO GARANTIR MEU EBOOK POR R$27 AGORA 👈</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2024 BRN Sistemas. Todos os direitos reservados. | Suporte: <a href="https://wa.me/5521987310915" target="_blank" rel="noopener">WhatsApp</a>
+  </footer>
+
+  <script>
+    (function forceMutedAutoplay(){
+      const mute = el => { try { el.muted = true; el.volume = 0; } catch(_){} };
+      document.querySelectorAll('video,audio').forEach(mute);
+      document.addEventListener('play', e => {
+        const t = e.target;
+        if (t instanceof HTMLVideoElement || t instanceof HTMLAudioElement) mute(t);
+      }, true);
+    })();
+  </script>
+  <script async src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js"></script>
+  <script>
+    (function(){
+      var s=document.createElement('script');
+      s.src='https://scripts.converteai.net/8de0291b-4cb6-41cd-aa0c-6962c76fc703/players/68c32d2302d156008fef5581/v4/player.js';
+      s.async=true; document.head.appendChild(s);
+    })();
+  </script>
+</body>
+</html>

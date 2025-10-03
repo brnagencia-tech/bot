@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Root artifacts
+brn_pixel/
+brn_pixel.zip
+pix-recovery/
+database.sql
+
+# Laravel (embedded at app/laravel)
+app/laravel/vendor/
+app/laravel/node_modules/
+app/laravel/public/build/
+app/laravel/storage/
+app/laravel/.env
+app/laravel/.env.local
+app/laravel/database/database.sqlite
+
+# Node
+node_modules/
+
+# Composer
+vendor/
+
+# PHPStorm / VSCode
+.idea/
+.vscode/
+
+# Logs
+*.log
+storage/
+

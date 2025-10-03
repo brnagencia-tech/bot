@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigad@! Acesso liberado ao eBook</title>
+  <meta name="description" content="Obrigad@ pela sua compra do eBook Do Zero ao Influenciador. Confira as próximas etapas para acessar seus bônus e suportes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <style>
+    :root {
+      --bg-primary:#f2f6fc;
+      --bg-secondary:#ffffff;
+      --text-primary:#071735;
+      --text-secondary:#2e3c58;
+      --accent:#00c27d;
+      --accent-dark:#008c5c;
+      --accent-light:rgba(0,194,125,.12);
+      --muted:#6c7a99;
+      --white:#fff;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Inter',sans-serif;
+      background:var(--bg-primary);
+      color:var(--text-primary);
+      line-height:1.6;
+    }
+    a { color:inherit; text-decoration:none; }
+
+    .page {
+      min-height:100vh;
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+    }
+
+    header {
+      padding:32px 24px;
+    }
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--accent-dark);
+      font-size:1rem;
+    }
+    .logo i {
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent-dark),var(--accent));
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.1rem;
+      box-shadow:0 14px 32px rgba(0,194,125,.25);
+    }
+
+    main {
+      padding:40px 24px 72px;
+    }
+    .card {
+      max-width:880px;
+      margin:0 auto;
+      background:var(--white);
+      border-radius:28px;
+      border:1px solid rgba(0,194,125,.16);
+      box-shadow:0 36px 70px rgba(7,23,53,.12);
+      padding:48px;
+      display:grid;
+      gap:40px;
+    }
+
+    .hero {
+      display:grid;
+      gap:20px;
+      text-align:center;
+    }
+    .hero h1 {
+      font-size:3rem;
+      font-weight:900;
+      letter-spacing:-.03em;
+      background:linear-gradient(135deg,var(--accent-dark),var(--accent));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero p {
+      color:var(--text-secondary);
+      font-size:1.1rem;
+      max-width:620px;
+      margin:0 auto;
+    }
+
+    .steps {
+      display:grid;
+      gap:24px;
+    }
+    .step {
+      display:grid;
+      gap:12px;
+      background:rgba(0,194,125,.06);
+      border-radius:20px;
+      border:1px solid rgba(0,194,125,.18);
+      padding:24px;
+    }
+    .step__title {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:1.15rem;
+      font-weight:800;
+      color:var(--accent-dark);
+    }
+    .step__title span {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:var(--white);
+      color:var(--accent-dark);
+      box-shadow:0 10px 26px rgba(0,194,125,.18);
+      font-size:1.05rem;
+      font-weight:800;
+    }
+    .step p { color:var(--text-secondary); }
+    .step ul {
+      list-style:none;
+      display:grid;
+      gap:8px;
+      color:var(--text-secondary);
+    }
+    .step ul li { display:flex; gap:10px; align-items:flex-start; }
+    .step ul i { color:var(--accent); margin-top:4px; }
+
+    .cta-block {
+      display:grid;
+      gap:16px;
+      text-align:center;
+      background:linear-gradient(135deg,rgba(0,194,125,.14),rgba(0,194,125,.05));
+      border:1px solid rgba(0,194,125,.2);
+      border-radius:22px;
+      padding:28px;
+    }
+    .cta-block p { color:var(--text-secondary); }
+
+    .cta-button {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px 28px;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      background:linear-gradient(135deg,var(--accent-dark),var(--accent));
+      color:var(--white);
+      box-shadow:0 18px 44px rgba(0,194,125,.24);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .cta-button:hover { transform:translateY(-2px); box-shadow:0 28px 58px rgba(0,194,125,.26); }
+
+    footer {
+      padding:32px 24px 40px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    footer a { color:var(--accent-dark); font-weight:600; }
+
+    @media (max-width:720px) {
+      header, main, footer { padding:28px 18px; }
+      .card { padding:36px 24px; gap:32px; }
+      .hero h1 { font-size:2.35rem; }
+      .hero p { font-size:1rem; }
+      .step { padding:20px; }
+      .cta-button { width:100%; font-size:1.02rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo"><i class="fa-solid fa-bolt"></i>BRN sistemas</div>
+    </header>
+
+    <main>
+      <div class="card">
+        <div class="hero">
+          <div class="icon" style="margin:0 auto; width:72px; height:72px; border-radius:22px; background:linear-gradient(135deg,var(--accent-dark),var(--accent)); display:flex; align-items:center; justify-content:center; color:var(--white); font-size:2rem; box-shadow:0 24px 50px rgba(0,194,125,.28);">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h1>Compra confirmada! Seu acesso já está chegando ao e-mail</h1>
+          <p>Enviamos a confirmação para o e-mail utilizado no checkout. Enquanto isso, siga os passos abaixo para garantir que você receba todo o conteúdo sem atrasos e aproveite os bônus exclusivos.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__title"><span>1</span>Confirme seu e-mail e confira a caixa de entrada</div>
+            <p>O assunto é <strong>“Do Zero ao Influenciador - Seus acessos”</strong>. Se não encontrar em alguns minutos:</p>
+            <ul>
+              <li><i class="fa-solid fa-inbox"></i>Verifique o SPAM, Lixo eletrônico e aba Promoções.</li>
+              <li><i class="fa-solid fa-envelope-circle-check"></i>Adicione <strong>contato@brnsistemas.com</strong> à sua lista segura.</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step__title"><span>2</span>Acesse o portal e faça o download do eBook</div>
+            <p>Use o link e senha enviados pelo e-mail da Kiwify. Lá você encontrará:</p>
+            <ul>
+              <li><i class="fa-solid fa-book-open"></i>O eBook “Do Zero ao Influenciador de Sucesso”.</li>
+              <li><i class="fa-solid fa-gift"></i>Checklist, planilhas e scripts prontos.</li>
+              <li><i class="fa-solid fa-film"></i>Vídeos bônus para acelerar sua primeira ação.</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step__title"><span>3</span>Entre no grupo de suporte BRN</div>
+            <p>É lá que você tira dúvidas rápidas, recebe alertas de atualizações e participa das sessões ao vivo de acompanhamento.</p>
+            <a class="cta-button" href="https://wa.me/5521987310915" target="_blank" rel="noopener">👉 Quero entrar no grupo VIP do WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="cta-block">
+          <h2 style="font-size:1.6rem; font-weight:900; letter-spacing:-.01em; color:var(--text-primary);">Precisa de ajuda agora?</h2>
+          <p>Nosso time está disponível de segunda a sexta, das 9h às 18h. Chame pelo WhatsApp ou responda o e-mail de confirmação.</p>
+          <a class="cta-button" href="https://wa.me/5521987310915?text=Ol%C3%A1%20Time%20BRN!%20Acabei%20de%20comprar%20o%20eBook%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener">💬 Falar com o suporte agora</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      © 2024 BRN Sistemas. Todos os direitos reservados. | <a href="https://brnsistemas.com" target="_blank" rel="noopener">brnsistemas.com</a>
+    </footer>
+  </div>
+</body>
+</html>
