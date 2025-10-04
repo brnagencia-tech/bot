@@ -14,7 +14,14 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = auth()->user();
+    if (!$user) {
+        return redirect()->route('login');
+    }
+    if (method_exists($user, 'isMaster') && $user->isMaster()) {
+        return redirect()->route('master.tenants');
+    }
+    return redirect()->route('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
